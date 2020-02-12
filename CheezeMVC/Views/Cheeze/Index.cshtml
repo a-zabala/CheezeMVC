@@ -1,0 +1,33 @@
+﻿@model CheezeMVC.Models.Cheeze
+@{
+
+
+}
+
+<h1>My Cheese</h1>
+
+<p><a asp-controller="Cheeze" asp-action="Add">Add Cheese</a> </p>
+
+@if (ViewBag.cheezes.Count == 0)
+{
+    <p>No Cheeses Yet</p>
+}
+<ul>
+    @foreach (Cheeze cheeze in ViewBag.cheezes)
+    {
+        <li>@cheeze.Name :   @cheeze.Description</li>
+    }
+
+
+</ul>
+
+@if (ViewBag.cheezes.Count != 0)
+{
+    <p><a asp-controller="Cheeze" asp-action="Remove">Remove Cheese</a> </p>
+}
+
+@if (ViewBag.cheezes.Count != 0)
+{
+    <p><a asp-controller="Cheeze" asp-action="Remove2">Remove Just one Cheese</a> </p>
+}
+

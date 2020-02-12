@@ -1,0 +1,22 @@
+﻿
+@model CheezeMVC.Models.Cheeze
+
+@{
+    ViewData["Title"] = "Remove";
+}
+
+
+<h1>Remove Cheese</h1>
+
+<form method="post" action="/cheeze/Remove">
+    @foreach (Cheeze cheeze in ViewBag.cheezes)
+    {
+
+
+        <input type="checkbox" name="cheeze.cheezelist" value="@cheeze.Name">@cheeze.Name<br />
+
+    }
+
+    <input type="submit" value="Remove" />
+</form>
+
